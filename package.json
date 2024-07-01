@@ -1,0 +1,17 @@
+{
+  "name": "image-resizer",
+  "version": "1.0.0",
+  "description": "App to resize image dimensions",
+  "main": "main.js",
+  "productName": "Image Resizer",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gnana Prakash M",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^31.1.0",
+    "resize-img": "^2.0.0",
+    "toastify-js": "^1.12.0"
+  }
+}
