@@ -12,6 +12,17 @@ function loadImage(e) {
     return;
   }
 
+  // Get original dimension
+  const image = new Image();
+  image.src = URL.createObjectURL(file);
+  image.onload = function () {
+    widthInput.value = this.width;
+    heightInput.value = this.height;
+  };
+
+  form.style.display = 'flex';
+  fileName.innerText = file.name;
+
   console.log('Success');
 }
 
