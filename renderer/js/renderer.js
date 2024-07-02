@@ -24,7 +24,7 @@ function loadImage(e) {
   fileName.innerText = file.name;
   outputPath.innerText = path.join(os.homedir(), 'Resized Images');
 
-  alertSuccess('Success');
+  // alertSuccess('Success');
 }
 
 // Send image to main
@@ -46,7 +46,17 @@ function sendImage(e) {
   }
 
   // Send to main with ipcRenderer
+  ipcRenderer.send('image:resize', {
+    imgPath,
+    width,
+    height,
+  });
 }
+
+// Catch image:done event
+ipcRenderer.on('image:done', () => {
+  alertSuccess(`Image resized to ${widthInput.value} x ${heightInput.value}`);
+});
 
 // Make sure file is image
 function isFileImage(file) {
