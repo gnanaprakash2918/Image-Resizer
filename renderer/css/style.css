@@ -4,3 +4,45 @@
   box-sizing: border-box;
   font-family: 'Outfit', sans-serif;
 }
+
+.hidden {
+  display: none;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #13293d;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.add-image-container label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 300px;
+  background-color: #e8f1f2;
+  border-radius: 12px;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.add-image-container label:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
