@@ -32,6 +32,24 @@ app.whenReady().then(() => {
   });
 });
 
+// Menu template
+const menu = [
+  {
+    label: 'File',
+    submenu: [
+      {
+        label: 'Quit',
+        click: () => app.quit(),
+        accelerator: 'CmdOrCtrl+W',
+      },
+    ],
+  },
+];
+
+// Main Menu
+const mainMenu = Menu.buildFromTemplate(menu);
+Menu.setApplicationMenu(mainMenu);
+
 app.on('window-all-closed', () => {
   if (!isMac) {
     app.quit();
