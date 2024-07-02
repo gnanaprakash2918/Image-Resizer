@@ -20,6 +20,21 @@ function createMainWindow() {
   mainWindow.loadFile(path.join(__dirname, './renderer/index.html'));
 }
 
+// Create About Window
+function createAboutWindow() {
+  const aboutWindow = new BrowserWindow({
+    title: 'About App',
+    width: isDev ? '1000' : '300',
+    height: '300',
+  });
+
+  if (isDev) {
+    aboutWindow.webContents.openDevTools();
+  }
+
+  aboutWindow.loadFile(path.join(__dirname, './renderer/about.html'));
+}
+
 // App is ready
 app.whenReady().then(() => {
   createMainWindow();
@@ -35,15 +50,22 @@ app.whenReady().then(() => {
 // Menu template
 const menu = [
   {
-    label: 'File',
-    submenu: [
-      {
-        label: 'Quit',
-        click: () => app.quit(),
-        accelerator: 'CmdOrCtrl+W',
-      },
-    ],
+    role: 'fileMenu',
   },
+
+  ...(!isMac
+    ? [
+        {
+          label: 'Help',
+          submenu: [
+            {
+              label: 'About',
+              click: createAboutWindow,
+            },
+          ],
+        },
+      ]
+    : []),
 ];
 
 // Main Menu
