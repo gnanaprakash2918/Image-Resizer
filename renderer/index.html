@@ -4,8 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Resizer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/renderer.js"></script>
   </head>
+
   <body>
     <h1>Hello World</h1>
+    <div class="container">
+      <!-- Add Image Section -->
+      <div class="add-image-container">
+        <label>
+          <img src="images/add-img.png" alt="add-img-btn" width="100" />
+          <span>Select an image to resize</span>
+          <input type="file" class="hidden" id="img" />
+        </label>
+      </div>
+
+      <!-- Form -->
+      <form id="img-form" class="hidden">
+        <div class="width-container">
+          <label for="width-btn">Width</label>
+          <input type="number" name="width" id="width" placeholder="Width" />
+        </div>
+
+        <div class="height-container">
+          <label for="height-btn">Height</label>
+          <input type="number" name="width" id="height" placeholder="Height" />
+        </div>
+
+        <div>
+          <button type="submit">Resize !</button>
+        </div>
+      </form>
+
+      <p>
+        <strong>File:</strong>
+        <span id="filename"></span>
+      </p>
+
+      <p>
+        <strong>Output:</strong>
+        <span id="output-path"></span>
+      </p>
+    </div>
   </body>
 </html>

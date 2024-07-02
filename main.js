@@ -14,7 +14,6 @@ function createMainWindow() {
 
   // Open devtools if in dev env
   if (isDev) {
-    console.log('hi');
     mainWindow.webContents.openDevTools();
   }
 
