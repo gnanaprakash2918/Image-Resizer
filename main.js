@@ -7,9 +7,10 @@ const isDev = process.env.NODE_ENV !== 'production';
 // Create a main window
 function createMainWindow() {
   const mainWindow = new BrowserWindow({
+    useContentSize: true,
     title: 'Image Resizer',
-    width: isDev ? '1000' : '500',
-    height: '600',
+    width: isDev ? 1000 : 600,
+    height: 600,
   });
 
   // Open devtools if in dev env
@@ -23,14 +24,13 @@ function createMainWindow() {
 // Create About Window
 function createAboutWindow() {
   const aboutWindow = new BrowserWindow({
+    useContentSize: true,
     title: 'About App',
-    width: isDev ? '1000' : '300',
-    height: '300',
+    width: 400,
+    height: 300,
+    modal: true,
+    resizable: false,
   });
-
-  if (isDev) {
-    aboutWindow.webContents.openDevTools();
-  }
 
   aboutWindow.loadFile(path.join(__dirname, './renderer/about.html'));
 }
