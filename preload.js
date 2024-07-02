@@ -1,5 +1,6 @@
 const os = require('os');
 const path = require('path');
+const Toastify = require('toastify-js');
 
 const { contextBridge } = require('electron');
 
@@ -9,4 +10,8 @@ contextBridge.exposeInMainWorld('os', {
 
 contextBridge.exposeInMainWorld('path', {
   join: (...args) => path.join(...args),
+});
+
+contextBridge.exposeInMainWorld('Toastify', {
+  toast: (options) => Toastify(options).showToast(),
 });

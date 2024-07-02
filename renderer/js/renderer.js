@@ -8,7 +8,7 @@ const widthInput = document.querySelector('#width');
 function loadImage(e) {
   const file = e.target.files[0];
   if (!isFileImage(file)) {
-    console.log('Please Select an image');
+    alertError('Please Select an Image');
     return;
   }
 
@@ -24,7 +24,7 @@ function loadImage(e) {
   fileName.innerText = file.name;
   outputPath.innerText = path.join(os.homedir(), 'Resized Images');
 
-  console.log('Success');
+  alertSuccess('Success');
 }
 
 // Make sure file is image
@@ -42,6 +42,36 @@ function isFileImage(file) {
     'image/heif',
   ];
   return file && acceptedImages.includes(file['type']);
+}
+
+function alertError(msg) {
+  Toastify.toast({
+    text: msg,
+    duration: 5000,
+    close: false,
+    style: {
+      background: 'red',
+      color: 'white',
+      textAlign: 'center',
+      width: '100%',
+      padding: '12px',
+    },
+  });
+}
+
+function alertSuccess(msg) {
+  Toastify.toast({
+    text: msg,
+    duration: 5000,
+    close: false,
+    style: {
+      background: 'green',
+      color: 'white',
+      textAlign: 'center',
+      width: '100%',
+      padding: '12px',
+    },
+  });
 }
 
 img.addEventListener('change', loadImage);
