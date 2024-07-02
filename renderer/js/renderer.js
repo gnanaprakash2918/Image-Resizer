@@ -22,6 +22,7 @@ function loadImage(e) {
 
   form.style.display = 'flex';
   fileName.innerText = file.name;
+  outputPath.innerText = path.join(os.homedir(), 'Resized Images');
 
   console.log('Success');
 }

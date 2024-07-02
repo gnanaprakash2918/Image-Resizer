@@ -11,6 +11,11 @@ function createMainWindow() {
     title: 'Image Resizer',
     width: isDev ? 1000 : 700,
     height: 700,
+    webPreferences: {
+      contextIsolation: true,
+      nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js'),
+    },
   });
 
   // Open devtools if in dev env
