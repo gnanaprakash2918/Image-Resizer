@@ -26,7 +26,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
 }
 
 .add-image-container label {
@@ -34,15 +35,70 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 450px;
-  height: 300px;
+  width: 400px;
+  height: 170px;
   background-color: #e8f1f2;
   border-radius: 12px;
   gap: 20px;
   font-size: 20px;
+  padding: 25px;
+}
+
+.add-image-container {
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #e8f1f2;
+  padding: 25px;
+  border: none;
+  border-radius: 8px;
+  width: 400px;
+  height: 250px;
+}
+
+form input {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
+  border: none;
+}
+
+.width-container,
+.height-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .add-image-container label:hover {
   cursor: pointer;
   opacity: 90%;
+}
+
+button {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #04aa6d;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 15px;
+}
+
+button:hover {
+  opacity: 80%;
+}
+
+p {
+  background-color: #e8f1f2;
+  width: 400px;
+  margin-top: 20px;
+  padding: 12px;
 }

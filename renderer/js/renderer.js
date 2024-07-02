@@ -32,5 +32,4 @@ function isFileImage(file) {
   return file && acceptedImages.includes(file['type']);
 }
 
-console.log(img);
 img.addEventListener('change', loadImage);

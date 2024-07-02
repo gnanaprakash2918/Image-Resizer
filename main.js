@@ -9,8 +9,8 @@ function createMainWindow() {
   const mainWindow = new BrowserWindow({
     useContentSize: true,
     title: 'Image Resizer',
-    width: isDev ? 1000 : 600,
-    height: 600,
+    width: isDev ? 1000 : 700,
+    height: 700,
   });
 
   // Open devtools if in dev env
